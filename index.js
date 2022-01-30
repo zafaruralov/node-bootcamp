@@ -5,7 +5,7 @@ const csv = require("csvtojson");
 csv()
   .fromFile(csvFilePath)
   .then((books) => {
-    console.log(books);
+    console.log("stringified books: ", books);
     /**
      * [
      * 	{a:"1", b:"2", c:"3"},
