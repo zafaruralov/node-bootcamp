@@ -40,14 +40,3 @@ exports.updateUser = (req, res) => {
   if (age) userToUpdate.age = age;
   res.send(`User with the id ${id} has been updated`);
 };
-
-exports.updateAllUser = (req, res) => {
-  const { id } = req.params;
-  const { firstName, lastName, age } = req.body;
-  const userToUpdate = users.find((user) => user.id == id);
-
-  if (firstName) userToUpdate.firstName = firstName;
-  if (lastName) userToUpdate.lastName = lastName;
-  if (age) userToUpdate.age = age;
-  res.send(`User with the id ${id} has been updated`);
-};
