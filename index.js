@@ -1,3 +1,4 @@
+/*
 const csvtojson = require("csvtojson");
 const fs = require("fs");
 
@@ -8,7 +9,7 @@ csvtojson()
   .then((jsonObj) => {
     console.log(jsonObj);
 
-    fs.writeFileSync(
+    fs.writeFile(
       "output.json",
       JSON.stringify(jsonObj),
       "utf-8",
@@ -17,3 +18,27 @@ csvtojson()
       }
     );
   });
+*/
+
+/////////////////////////////
+//CRUD
+
+const express = require("express");
+const fs = require("fs");
+const bodyParser = require("body-parser");
+const app = express();
+const usersRouter = require("./routes/userRoutes");
+
+const PORT = 5000;
+
+app.use(bodyParser.json());
+
+app.get("/", (req, res) => res.send("HELLO "));
+
+app.use("/users", usersRouter);
+
+//
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT} `);
+});
