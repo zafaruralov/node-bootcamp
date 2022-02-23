@@ -5,6 +5,7 @@ const middlewares = require('./middleware')
 const productsRouter = require('./router/product')
 const usersRouter = require('./router/user')
 const app = express()
+require('dotenv').config()
 
 app.use(express.json({ extended: true }))
 app.use(morganMiddleware)
