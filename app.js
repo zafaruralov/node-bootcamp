@@ -6,7 +6,7 @@ const productsRouter = require('./router/product')
 const usersRouter = require('./router/user')
 const app = express()
 
-app.use(express.json())
+app.use(express.json({ extended: true }))
 app.use(morganMiddleware)
 
 app.get('/', (req, res) => {

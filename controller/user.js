@@ -14,6 +14,7 @@ const signJwtToken = (userId, email, username) => {
 const userController = {
     register: async (req, res, next) => {
         try {
+            console.log(req.body)
             const { email, username, password, type } = req.body
             const id = uuidv4()
             const hashedPassword = await bcrypt.hash(password, 10)
