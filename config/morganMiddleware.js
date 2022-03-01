@@ -1,12 +1,12 @@
-const morgan = require('morgan')
-const Logger = require('./logger')
+const morgan = require('morgan');
+const Logger = require('./logger');
 
 // Override the stream method by telling
 // Morgan to use our custom logger instead of the console.log.
 const stream = {
     // Use the http severity
     write: (message) => Logger.http(message),
-}
+};
 
 // Skip all the Morgan http log if the
 // application is not running in development mode.
@@ -28,6 +28,6 @@ const morganMiddleware = morgan(
     // Options: in this case, I overwrote the stream and the skip logic.
     // See the methods above.
     { stream }
-)
+);
 
-module.exports = morganMiddleware
+module.exports = morganMiddleware;

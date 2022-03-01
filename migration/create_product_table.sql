@@ -1,7 +1,7 @@
 CREATE DATABASE product;
 
 CREATE TABLE products (
-    id uuid not null,
-    title varchar not null,
-    price int not null
-);
+    id uuid NOT NULL,
+    title varchar NOT NULL,
+    price int NOT NULL
+)

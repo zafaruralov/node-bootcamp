@@ -3,25 +3,31 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "C:/Program Files/Git/path/to/origin.git"
   },
   "keywords": [],
   "author": "Samandar Uralov",
   "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.9.0",
-    "eslint-plugin-react": "^7.28.0"
-  },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "config": "^3.3.7",
     "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.4.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
+    "prettier": "^2.5.1",
     "uuid": "^8.3.2",
     "winston": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0"
   },
   "description": ""
 }
