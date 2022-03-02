@@ -17,9 +17,9 @@ const auth = {
     },
     checkUserType: (userType, courierType) => (req, res, next) => {
         const user = req.user;
-        // if(req.user === null){
-        //     const error = new AppError(403, 'you needed to sign in')
-        // }
+        if (req.user === undefined) {
+            const error = new AppError(403, 'you needed to sign in');
+        }
         console.log('user', user);
         const hasPermission = user.userType === userType;
         // const hasPermission = user.courierType === courierType;
