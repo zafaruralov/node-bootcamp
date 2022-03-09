@@ -17,15 +17,10 @@ const auth = {
     },
     checkUserType: (userType, courierType) => (req, res, next) => {
         const user = req.user;
-        if (req.user === undefined) {
-            const error = new AppError(403, 'you needed to sign in');
-        }
         console.log('user', user);
-        const hasPermission = user.userType === userType;
-        // const hasPermission = user.courierType === courierType;
-        const hasCourierPermission = user.courierType === courierType;
-        if (!hasPermission && !hasCourierPermission) {
-            // if (!hasPermission) {
+        
+        const hasPermission = user.userType === userType || user.courierType === courierType;
+        if (!hasPermission ) {
             const err = new AppError(
                 403,
                 'User has no needed permission to execute this operation'
