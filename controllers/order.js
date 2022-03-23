@@ -1,6 +1,5 @@
 const Database = require('../db/index.js');
 const { v4: uuidv4 } = require('uuid');
-
 const ordersController = {
     getOrders: async (req, res, next) => {
         try {
