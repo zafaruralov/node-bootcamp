@@ -1,0 +1,1 @@
+ALTER TABLE orders ADD COLUMN courier_id uuid NOT NULL REFERENCES users (user_type, id);
